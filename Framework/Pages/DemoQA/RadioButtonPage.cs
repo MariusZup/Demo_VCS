@@ -18,7 +18,7 @@ namespace Framework.Pages.DemoQA
 
         public static string getMessage()
         {
-            string locator = "//*[@class='text-succes']";
+            string locator = "//*[@class='text-success']";
             return Common.getElementText(locator);
         }
     }

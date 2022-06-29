@@ -16,21 +16,16 @@ namespace Framework.Pages.SeleniumEasy
             Common.clickElement(locator);
         }
 
-        public static void enterMessage(string message)
-        {
-            string locator = "//*[@id='user-message']";
-            Common.sendKeysToElement(locator, message);
-        }
-
         public static string readMessage()
         {
             string locator = "//*[@id='display']";
            return Common.getElementText(locator);
         }
 
-        public static void enterMessage()
+        public static void enterMessage(string message)
         {
-            throw new NotImplementedException();
+            string locator = "//*[@id='user-message']";
+            Common.sendKeysToElement(locator, message);
         }
 
         public static void clickShowMessageButton()
@@ -51,16 +46,16 @@ namespace Framework.Pages.SeleniumEasy
             Common.sendKeysToElement(locator, input);
         }
 
-        public static string readTotal()
-        {
-            string locator = "//[@id='displayvalue']";
-           return Common.getElementText(locator);
-        }
-
         public static void clickGetTotalButton()
         {
             string locator = "//*[@id='gettotal']/button";
             Common.clickElement(locator);
+        }
+
+        public static string readTotal()
+        {
+            string locator = "//[@id='displayvalue']";
+            return Common.getElementText(locator);
         }
     }
 }

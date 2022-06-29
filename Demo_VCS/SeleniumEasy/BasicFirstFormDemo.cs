@@ -27,7 +27,7 @@ namespace Demo_VCS.SeleniumEasy
             string expectedMessage = "Test";
             string actualMessage;
 
-            BasicFirstFormDemoPage.enterMessage();
+            BasicFirstFormDemoPage.enterMessage(expectedMessage);
             BasicFirstFormDemoPage.clickShowMessageButton();
             actualMessage = BasicFirstFormDemoPage.readMessage();
 

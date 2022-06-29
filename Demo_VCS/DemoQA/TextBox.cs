@@ -22,7 +22,7 @@ namespace Demo_VCS
 
         [Test]
 
-        public static void openDemoQA()
+        public static void demoQATextBox()
         {
             string expectedName = "Martynas";
             string expectedEmail = "email.email@com";
@@ -37,6 +37,7 @@ namespace Demo_VCS
             Assert.IsTrue(actualEmail.Contains(expectedEmail));
 
         }
+
         [TearDown]
 
         public static void close()

@@ -12,10 +12,10 @@ namespace Framework
     {
         private static IWebDriver driver;
 
-
         public static void setDriver()
         {
-            IWebDriver driver = new ChromeDriver();
+            driver = new ChromeDriver();
+            driver.Manage().Timeouts().ImplicitWait = System.TimeSpan.FromSeconds(10);
         }
 
         public static IWebDriver getDriver()
