@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaseClasses\BaseTest.cs" />
+    <Compile Include="DemoQA\DynamicProperties.cs" />
+    <Compile Include="NonUI\Class1.cs" />
     <Compile Include="DemoQA\Buttons.cs" />
     <Compile Include="DemoQA\Radiobutton.cs" />
     <Compile Include="DemoQA\TextBox.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="SeleniumEasy\BasicCheckBoxDemo.cs" />
     <Compile Include="SeleniumEasy\BasicFirstFormDemo.cs" />
     <Compile Include="SeleniumEasy\BasicSelectDropdownDemo.cs" />
+    <Compile Include="SeleniumEasy\JavaScriptAlerts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -22,7 +22,7 @@ namespace Demo_VCS
         [Test]
         public static void Test2()
         {
-            int expectedHour = 21;
+            int expectedHour = 01;
             int actualHour = DateTime.Now.Hour;
 
             Assert.AreEqual(expectedHour, actualHour);

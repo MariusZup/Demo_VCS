@@ -10,11 +10,16 @@ using System.Threading.Tasks;
 
 namespace Framework.Pages
 {
-    internal class Common
+    public class Common
     {
         public static IWebElement getElement(string locator)
         {
             return Driver.getDriver().FindElement(By.XPath(locator));
+        }
+
+        internal static void alertAccept()
+        {
+            Driver.getDriver().SwitchTo().Alert().Accept();
         }
 
         public static void selectOptionByValue(string locator, string value)
@@ -43,6 +48,11 @@ namespace Framework.Pages
             getElement(locator).Click();
         }
 
+        internal static void performDoubleClick(string locator)
+        {
+            throw new NotImplementedException();
+        }
+
         public static string getElementText(string locator)
         {
             return getElement(locator).Text;
@@ -58,6 +68,16 @@ namespace Framework.Pages
         {
             WebDriverWait wait = new WebDriverWait(Driver.getDriver(), TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath(locator)));
+        }
+        internal static void waitForElementToBeClickable(string locator)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+        }
+        public static void waitForElementAttributeToContainValue(string locator, string attributeName, string attributeValue)
+        {
+            new WebDriverWait(Driver.getDriver(), TimeSpan.FromSeconds(10))
+               .Until(d => d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(attributeValue));
         }
     }
 }

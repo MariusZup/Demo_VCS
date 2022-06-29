@@ -1,21 +1,17 @@
 ﻿using Framework;
 using Framework.Pages.DemoQA;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Tests.BaseClasses;
 
 namespace Demo_VCS.DemoQA
 {
-    public class Buttons
+    [Parallelizable(scope: ParallelScope.Children)]
+    public class Buttons : BaseTest
     {
         [SetUp]
-        public static void setup()
+        public static void openPage()
         {
-            Driver.setDriver();
-            Driver.open("https://demoqa.com/buttons");
+            ButtonsPage.open();
         }
 
         [Test]
@@ -41,11 +37,17 @@ namespace Demo_VCS.DemoQA
 
             Assert.AreEqual(expectedMessage, actualMessage);
         }
-
-        [TearDown]
-        public static void close()
+        [Test]
+        public static void doubleClick()
         {
-            Driver.closeDriver();
+            string expectedMessage = "You have done a double click";
+            string actualMessage;
+
+            ButtonsPage.doubleClick();
+            actualMessage = ButtonsPage.readMessageDoubleClick();
+
+            Assert.AreEqual(expectedMessage, actualMessage);
         }
+
     }
 }

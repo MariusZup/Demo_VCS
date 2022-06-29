@@ -1,27 +1,19 @@
 ﻿using Framework;
+using Framework.Pages.DemoQA;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TextBoxPage = Framework.Pages.DemoQA.TextBoxPage;
+using Tests.BaseClasses;
 
-namespace Demo_VCS
+namespace Tests.DemoQA
 {
-    public class TextBox
+    public class TextBox : BaseTest
     {
         [SetUp]
-        
-        public static void setup()
+        public static void openPage()
         {
-            Driver.setDriver();
-            Driver.open("https://demoqa.com/text-box");
+            TextBoxPage.open();
         }
 
-
         [Test]
-
         public static void demoQaTextBox()
         {
             string expectedName = "Martynas";
@@ -35,14 +27,6 @@ namespace Demo_VCS
 
             Assert.IsTrue(actualName.Contains(expectedName));
             Assert.IsTrue(actualEmail.Contains(expectedEmail));
-
-        }
-
-        [TearDown]
-
-        public static void close()
-        {
-            Driver.closeDriver();
         }
     }
 }

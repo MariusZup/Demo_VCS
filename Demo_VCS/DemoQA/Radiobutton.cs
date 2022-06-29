@@ -8,34 +8,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tests.BaseClasses;
 
-namespace Demo_VCS.DemoQA
+namespace Tests.DemoQA
 {
-    internal class Radiobutton
+    public class Radiobutton
     {
-
-        [OneTimeSetUp]
-        public void setup()
+        public class RadioButton : BaseTest
         {
-            Driver.setDriver();
-            Driver.open("https://demoqa.com/radio-button");
-        }
+            [SetUp]
+            public void openPage()
+            {
+                RadioButtonPage.open();
+            }
 
-        [Test]
-        public void radioButton()
-        {
-            string expectedMessage = "Yes";
+            [Test]
+            public void radioButton()
+            {
+                string expectedMessage = "Yes";
 
-            RadioButtonPage.clickYesRadioButton();
-            string actualMessage = RadioButtonPage.getMessage();
+                RadioButtonPage.clickYesRadioButton();
+                string actualMessage = RadioButtonPage.getMessage();
 
-            Assert.IsTrue(actualMessage.Contains(expectedMessage));
-        }
-
-        [OneTimeTearDown]
-        public void close()
-        {
-            Driver.closeDriver();
+                Assert.IsTrue(actualMessage.Contains(expectedMessage));
+            }
         }
     }
 }

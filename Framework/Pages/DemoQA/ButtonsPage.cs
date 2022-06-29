@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.Pages.DemoQA
+﻿namespace Framework.Pages.DemoQA
 {
    public class ButtonsPage
     {
+        public static void open()
+        {
+            Driver.open(Constants.Urls.DemoQA.ButtonsPage);
+        }
+
         public static void leftClick()
         {
             string locator = "//*[text()='Click Me']";
@@ -29,6 +28,18 @@ namespace Framework.Pages.DemoQA
         public static string readMessageRightClick()
         {
             string locator = "//*[@id='rightClickMessage']";
+            return Common.getElementText(locator);
+        }
+
+        public static void doubleClick()
+        {
+            string locator = "//*[@id='doubleClickBtn']";
+            Common.performDoubleClick(locator);
+        }
+
+        public static string readMessageDoubleClick()
+        {
+            string locator = "//*[@id='doubleClickMessage']";
             return Common.getElementText(locator);
         }
     }
