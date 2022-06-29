@@ -11,30 +11,30 @@ namespace Framework.Pages.DemoQA
         public static void enterFullName(string name)
         {
             string locator = "//*[@id='userName']";
-            Common.sendKeysToElement(locator, name);
+            Common.getElement(locator).SendKeys(name);
         }
 
         public static void enterEmail(string email)
         {
             string locator = "//*[@id='userEmail']";
-            Common.sendKeysToElement(locator, email);
+            Common.getElement(locator).SendKeys(email);
         }
         public static void clickSubmitButton()
         {
             string locator = "//*[@id='submit']";
-            Common.clickElement(locator);
+            Common.getElement(locator).Click();
         }
 
         public static string getNameAfterSubmit()
         {
             string locator = "//*[@id='name']";
-            return Common.getElementText(locator);
+            return Common.getElement(locator).Text;
         }
 
         public static string getEmailAfterSubmit()
         {
             string locator = "//*[@id='email']";
-            return Common.getElementText(locator);
+            return Common.getElement(locator).Text;
         }
     }
 }

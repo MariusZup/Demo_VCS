@@ -22,10 +22,10 @@ namespace Demo_VCS
 
         [Test]
 
-        public static void demoQATextBox()
+        public static void demoQaTextBox()
         {
             string expectedName = "Martynas";
-            string expectedEmail = "email.email@com";
+            string expectedEmail = "email@email.com";
 
             TextBoxPage.enterFullName(expectedName);
             TextBoxPage.enterEmail(expectedEmail);
