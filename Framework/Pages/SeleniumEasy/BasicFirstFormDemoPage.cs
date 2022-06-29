@@ -54,7 +54,7 @@ namespace Framework.Pages.SeleniumEasy
 
         public static string readTotal()
         {
-            string locator = "//[@id='displayvalue']";
+            string locator = "//*[@id='displayvalue']";
             return Common.getElementText(locator);
         }
     }
