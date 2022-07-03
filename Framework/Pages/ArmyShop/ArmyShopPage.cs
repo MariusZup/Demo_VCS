@@ -26,11 +26,5 @@ namespace Framework.Pages.ArmyShop
             string locator = "//*[@id='content']/div[1]/div[1]/div/div[1]/div[1]/a";
             return Common.getElementText(locator);
         }
-
-        public static void clickBlogas()
-        {
-            string locator = "//*[@id='position_menu1']/div/div/div/div/ul/li[5]/a/span";
-            Common.clickElement(locator);
-        }
     }
 }
