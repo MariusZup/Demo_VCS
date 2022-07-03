@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArmyShop\ArmyShop.cs" />
     <Compile Include="BaseClasses\BaseTest.cs" />
     <Compile Include="DemoQA\DynamicProperties.cs" />
     <Compile Include="NonUI\Class1.cs" />
